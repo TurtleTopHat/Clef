@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.2.6/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.2.6/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.6/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.2.6/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.2.6/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.2.6/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.2.6/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.2.6/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.2.6/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.2.6/firebase-performance.js"></script>
+    <!--
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+
+  <body>
+
+  <script src="javascript/script.js"></script>
+  <p>Please enter a musical note from A - G#</p>
+
+
+  <label for="note">Musical Note: </label><br>
+  <input type="text" id="note_val"><br>
+  <button onclick="run()">Click me</button>
+
+  <p> Resulting Chords, </p>
+  <table>
+  <tbody>
+  <tr>
+  <td><p id = 'first'>Placeholder</p></td>
+  <td><p id = 'second'>Placeholder</p></td>
+  <td><p id = 'third'>Placeholder</p></td>
+  <td><p id = 'fourth'>Placeholder</p></td>
+  <td><p id = 'fifth'>Placeholder</p></td>
+  <td><p id = 'sixth'>Placeholder</p></td>
+  <td><p id = 'seventh'>Placeholder</p></td>
+  </tr>
+  </tbody>
+  </table>
+</body>
+</html>
