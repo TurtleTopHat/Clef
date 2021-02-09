@@ -1,5 +1,13 @@
 "use strict";
 
+function midi_test(){
+  if (navigator.requestMIDIAccess) {
+    console.log('This browser supports WebMIDI!');
+} else {
+    console.log('WebMIDI is not supported in this browser.');
+}
+}
+
 function run(){
   var answer = document.getElementById("note_val").value;
   answer = note_to_num(answer);
