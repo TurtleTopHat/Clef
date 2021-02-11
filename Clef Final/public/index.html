@@ -1,84 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Example</title>
+<header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> CLEF Music App NUIG</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+</header>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.2.6/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.2.6/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-performance.js"></script>
-    <!--
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <link rel="stylesheet" href="stylesheets/piano.css">
-    <script src="javascript/script.js"></script>
-  </head>
+<style>
+h1 {text-align: center;}
+h4 {text-align: center;}
+button   {text-align: center;}
+div   {text-align: center;}
 
-  <body>
+</style>
 
+<link rel="stylesheet" href="stylesheets/piano.css">
+<script src="javascript/script.js"></script>
 
-  <p>Please enter a musical note from A - G#</p>
+<body>
 
-
-  <label for="note">Musical Note: </label><br>
-  <input type="text" id="note_val"><br>
-  <button onclick="run()">Click me</button>
-
-  <p> Resulting Chords, </p>
-  <table>
-  <tbody>
-  <tr>
-  <td><p id = 'first'>Placeholder</p></td>
-  <td><p id = 'second'>Placeholder</p></td>
-  <td><p id = 'third'>Placeholder</p></td>
-  <td><p id = 'fourth'>Placeholder</p></td>
-  <td><p id = 'fifth'>Placeholder</p></td>
-  <td><p id = 'sixth'>Placeholder</p></td>
-  <td><p id = 'seventh'>Placeholder</p></td>
-  </tr>
-  </tbody>
-  </table>
-
-  <!-- made with help from https://www.studytonight.com/post/build-a-piano-app-using-javascript -->
-  <div class = "piano">
-    <div class = "key_w" data-note = "C3"></div>
-    <div class = "key_b" data-note = "C#3"></div>
-    <div class = "key_w" data-note = "D3"></div>
-    <div class = "key_b" data-note = "D#3"></div>
-    <div class = "key_w" data-note = "E3"></div>
-    <div class = "key_w" data-note = "F3"></div>
-    <div class = "key_b" data-note = "F#3"></div>
-    <div class = "key_w" data-note = "G3"></div>
-    <div class = "key_b" data-note = "G#3"></div>
-    <div class = "key_w" data-note = "A3"></div>
-    <div class = "key_b" data-note = "A#3"></div>
-    <div class = "key_w" data-note = "B3"></div>
-    <div class = "key_w" data-note = "C4"></div>
-    <div class = "key_b" data-note = "C#4"></div>
-    <div class = "key_w" data-note = "D4"></div>
-    <div class = "key_b" data-note = "D#4"></div>
-    <div class = "key_w" data-note = "E4"></div>
-    <div class = "key_w" data-note = "F4"></div>
-    <div class = "key_b" data-note = "F#4"></div>
-    <div class = "key_w" data-note = "G4"></div>
-    <div class = "key_b" data-note = "G#4"></div>
-    <div class = "key_w" data-note = "A4"></div>
-    <div class = "key_b" data-note = "A#4"></div>
-    <div class = "key_w" data-note = "B4"></div>
+  <!-- use CSS to put in top right corner in line with "CLEF" -->
+  <div id="NUIG Logo">
+    <img src="https://via.placeholder.com/150"> <class="NUIG logo"/>
+    <div>NUI Galway</div>
   </div>
+
+  <!-- use CSS to put in top left corner in line with "CLEF" -->
+  <div id="CLEF Logo">
+    <img src="https://via.placeholder.com/150"> <class="CLEF logo"/>
+    <div>CLEF Logo</div>
+  </div>
+
+
+  <h1> CLEF</h1>
+  <h4> The chord generator/transposer for all your composing needs. </h4>
+  <hr>
+  <h4> Select your instrument and key settings.</h4>
+  <br>
+
+  <div class="instruments">
+    <button onclick="display_piano()" class="button ">Piano</button>
+    <button class="button ">Guitar</button>
+    <button class="button ">Sustained</button>
+  </div> <br>
+
+  <div class="tonality">
+    <button onclick="note_select(this.id)" id = "A" class="button">A</button>
+    <button onclick="note_select(this.id)" id = "B" class="button">B</button>
+    <button onclick="note_select(this.id)" id = "C" class="button">C</button>
+    <button onclick="note_select(this.id)" id = "D" class="button">D</button>
+    <button onclick="note_select(this.id)" id = "E" class="button">E</button>
+    <button onclick="note_select(this.id)" id = "F" class="button">F</button>
+    <button onclick="note_select(this.id)" id = "G" class="button">G</button>
+  </div> <br>
+
+  <div class="key settings">
+    <button onclick="sharp_or_flat(this.id)" id = "b" class="accidental">b</button>
+    <button onclick="sharp_or_flat(this.id)" id = "#" class="accidental">#</button>
+    &emsp;
+    <button onclick="maj_or_min(this.id)" id = "maj" class="button ">Maj</button>
+    <button onclick="maj_or_min(this.id)" id = "min" class="button ">min</button>
+  </div><br>
+
+  <div class="results">
+    <button onclick="run()"><b>See Results</b> </button>
+  </div><br>
+  <hr>
+  <br>
+
+  <div class="Chords Options">
+    <div class="tonic">
+      <button id = "I" class="button green">I </button>
+    </div>
+    <div class="dominant/subdominant">
+      <button id = "V" class="button orange">V</button>
+      <button id = "IV" class="button orange">IV</button>
+    </div>
+    <div class="supertonic/submediant/mediant">
+      <button id = "II" class="button red">ii</button>
+      <button id = "VI" class="button red">vi</button>
+      <button id = "III" class="button red">iii</button>
+    </div>
+  </div>
+
+  <div id = "piano" class="piano">
+    <div class="key white" data-note="C"></div>
+    <div class="key black" data-note="Cs"></div>
+    <div class="key white" data-note="D"></div>
+    <div class="key black" data-note="Ds"></div>
+    <div class="key white" data-note="E"></div>
+    <div class="key white" data-note="F"></div>
+    <div class="key black" data-note="Fs"></div>
+    <div class="key white" data-note="G"></div>
+    <div class="key black" data-note="Gs"></div>
+    <div class="key white" data-note="A"></div>
+    <div class="key black" data-note="As"></div>
+    <div class="key white" data-note="B"></div>
+  </div>
+
+
+</body>
+
 </body>
 </html>
