@@ -10,6 +10,29 @@ function display_piano(){
   }
 }
 
+window.onload=function(){
+  const keys = document.querySelectorAll('.key');
+
+  keys.forEach((key) => {
+    key.addEventListener('mousedown', () => playNote(key));
+    key.addEventListener('mouseup', () => removeNote(key));
+  });
+
+  let playNote = (key) => {
+    key.classList.add('active');
+  };
+  let removeNote = (key) => {
+    key.classList.remove('active');
+  };
+}
+function change_w(){
+  document.getElementById("white").classList.add('active');
+}
+
+function change_back_w(){
+  document.getElementById("white").classList.remove('active');
+}
+
 var note_selected = "default";
 function note_select(n){
   note_selected = n;
