@@ -1,3 +1,8 @@
+function sound(){
+  var audio = new Audio('notes/C4.mp3');
+  audio.play();
+}
+
 var piano_vis = false;
 
 function display_piano(){
@@ -20,6 +25,8 @@ window.onload=function(){
 
   let playNote = (key) => {
     key.classList.add('active');
+    var note_playing = new Audio('notes/' + key.dataset.note + '4.mp3');
+    note_playing.play();
   };
   let removeNote = (key) => {
     key.classList.remove('active');
