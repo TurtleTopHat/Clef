@@ -3,14 +3,17 @@
 <header>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Anton&display=swap" rel="stylesheet">  <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Fredoka+One&display=swap" rel="stylesheet">  <!-- font -->
   <title> CLEF Music App NUIG</title>
 
 </header>
 
 <style>
-h1 {text-align: center;}
-h4 {text-align: center;}
-button   {text-align: center;}
+h1 {text-align: center; font-family: 'Anton', sans-serif; font-size: 40px;}
+h4 {text-align: center; font-family: 'Abel', sans-serif; font-size: 20px;}
+button   {text-align: center; font-size: 16px;}
 div   {text-align: center;}
 
 </style>
@@ -35,32 +38,34 @@ div   {text-align: center;}
 
   <h1> CLEF</h1>
   <h4> The chord generator/transposer for all your composing needs. </h4>
-  <hr>
+  
+
+  <div class="shadow_box">
   <h4> Select your instrument and key settings.</h4>
   <br>
 
   <div class="instruments">
-    <button onclick="display_piano()" class="button ">Piano</button>
-    <button class="button ">Guitar</button>
-    <button class="button ">Sustained</button>
+    <button onclick="display_piano()" class="button_instrument">Piano</button>
+    <button class="button_instrument">Guitar</button>
+    <button class="button_instrument">Sustained</button>
   </div> <br>
 
   <div class="tonality">
-    <button onclick="note_select(this.id)" id = "A" class="button">A</button>
-    <button onclick="note_select(this.id)" id = "B" class="button">B</button>
-    <button onclick="note_select(this.id)" id = "C" class="button">C</button>
-    <button onclick="note_select(this.id)" id = "D" class="button">D</button>
-    <button onclick="note_select(this.id)" id = "E" class="button">E</button>
-    <button onclick="note_select(this.id)" id = "F" class="button">F</button>
-    <button onclick="note_select(this.id)" id = "G" class="button">G</button>
+    <button onclick="note_select(this.id)" id = "A" class="button_note">A</button>
+    <button onclick="note_select(this.id)" id = "B" class="button_note">B</button>
+    <button onclick="note_select(this.id)" id = "C" class="button_note">C</button>
+    <button onclick="note_select(this.id)" id = "D" class="button_note">D</button>
+    <button onclick="note_select(this.id)" id = "E" class="button_note">E</button>
+    <button onclick="note_select(this.id)" id = "F" class="button_note">F</button>
+    <button onclick="note_select(this.id)" id = "G" class="button_note">G</button>
   </div> <br>
 
   <div class="key settings">
     <button onclick="sharp_or_flat(this.id)" id = "b" class="accidental">b</button>
     <button onclick="sharp_or_flat(this.id)" id = "#" class="accidental">#</button>
     &emsp;
-    <button onclick="maj_or_min(this.id)" id = "maj" class="button ">Maj</button>
-    <button onclick="maj_or_min(this.id)" id = "min" class="button ">min</button>
+    <button onclick="maj_or_min(this.id)" id = "maj" class="button_scale">Maj</button>
+    <button onclick="maj_or_min(this.id)" id = "min" class="button_scale">min</button>
   </div><br>
 
   <div class="results">
@@ -69,7 +74,9 @@ div   {text-align: center;}
   </div>
 
   <br>
-  <hr>
+
+</div>
+  
   <br>
 
   <div class="Chords Options">
@@ -88,7 +95,7 @@ div   {text-align: center;}
   </div>
 
   <div id = "piano" class="piano">
-    <div id = "key white" class = "key white" data-note="C"></div>
+    <div id = "first_key" class = "key white" data-note="C"></div>
     <div id = "key black" class = "key black" data-note="Cs"></div>
     <div id = "key white" class = "key white" data-note="D"></div>
     <div id = "key black" class = "key black" data-note="Ds"></div>
@@ -99,7 +106,7 @@ div   {text-align: center;}
     <div id = "key black" class = "key black" data-note="Gs"></div>
     <div id = "key white" class = "key white" data-note="A"></div>
     <div id = "key black" class = "key black" data-note="As"></div>
-    <div id = "key white" class = "key white" data-note="B"></div>
+    <div id = "last_key" class = "key white" data-note="B"></div>
   </div>
 
 

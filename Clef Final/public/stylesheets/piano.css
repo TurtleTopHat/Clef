@@ -10,11 +10,48 @@ body {
     box-sizing: border-box;
 }
 
+.button_instrument{
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+}
+
+
+
+.button_note{
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+}
+
+.button_scale{
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+}
+
+.shadow_box{
+    margin: 10px auto;
+    width: 60%;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+}
+
 .accidental{
   visibility: hidden;
 }
 
 .piano {
+    margin-top: 20px;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -27,7 +64,19 @@ body {
     min-width: 60px;
     height: 70%;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc;   
+}
+
+
+
+#last_key{
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#first_key{
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 .black {
@@ -37,6 +86,8 @@ body {
     margin-right: -4%;
     z-index: 2;
     background-color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .white.active {
@@ -45,4 +96,37 @@ body {
 
 .black.active {
     background-color: #333;
+}
+
+@media only screen and (min-width: 1024px){
+
+
+.white:hover{
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+.black:hover{
+    background-color: #2d2d2d;
+    cursor: pointer;
+}
+
+.button_instrument:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.button_note:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.button_scale:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
 }
