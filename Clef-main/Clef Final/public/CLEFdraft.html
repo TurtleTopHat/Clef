@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> CLEF Music App NUIG</title>
+
+    </header>
+
+       <style>
+         h1 {text-align: center;}
+         h4 {text-align: center;}
+         button   {text-align: center;}
+         div   {text-align: center;}
+
+        </style>
+        
+        <body>
+       
+          <!-- use CSS to put in top right corner in line with "CLEF" -->
+           <div id="NUIG Logo">
+           <img src="https://via.placeholder.com/150"> <class="NUIG logo"/>
+           <div>NUI Galway</div>
+           </div>
+   
+           <!-- use CSS to put in top left corner in line with "CLEF" -->
+           <div id="CLEF Logo">
+           <img src="https://via.placeholder.com/150"> <class="CLEF logo"/>
+           <div>CLEF Logo</div>
+           </div>
+    
+
+            <h1> CLEF</h1> 
+            <h4> The chord generator/transposer for all your composing needs. </h4>
+            <hr>
+            <h4> Select your instrument and key settings.</h4>
+            <br>
+
+            <div class="instruments">
+                  <button class="button ">Piano</button>
+                  <button class="button ">Guitar</button>
+                  <button class="button ">Sustained</button>
+                  </div> <br>
+
+                    <div class="tonality">
+                    <button class="button ">A</button>
+                    <button class="button ">B</button>
+                    <button class="button ">C</button>
+                    <button class="button ">D</button>
+                    <button class="button ">E</button>
+                    <button class="button ">F</button>
+                    <button class="button ">G</button>
+                    </div> <br>
+
+                    <div class="key settings">
+                        <button class="button ">b</button>
+                        <button class="button ">#</button>
+                        &emsp;
+                        <button class="button ">Maj</button>
+                        <button class="button ">min</button>
+                    </div><br>
+                    
+                    <div class="results">
+                    <button onclick="run()"><b>See Results</b> </button> 
+                    </div><br>
+                    <hr>
+                    <br>
+
+                    <div class = "Piano Keyboard">
+                        <div class = "key_w" data-note = "C3"></div>
+                        <div class = "key_b" data-note = "C#3"></div>
+                        <div class = "key_w" data-note = "D3"></div>
+                        <div class = "key_b" data-note = "D#3"></div>
+                        <div class = "key_w" data-note = "E3"></div>
+                        <div class = "key_w" data-note = "F3"></div>
+                        <div class = "key_b" data-note = "F#3"></div>
+                        <div class = "key_w" data-note = "G3"></div>
+                        <div class = "key_b" data-note = "G#3"></div>
+                        <div class = "key_w" data-note = "A3"></div>
+                        <div class = "key_b" data-note = "A#3"></div>
+                        <div class = "key_w" data-note = "B3"></div>
+                        <div class = "key_w" data-note = "C4"></div>
+                        <div class = "key_b" data-note = "C#4"></div>
+                        <div class = "key_w" data-note = "D4"></div>
+                        <div class = "key_b" data-note = "D#4"></div>
+                        <div class = "key_w" data-note = "E4"></div>
+                        <div class = "key_w" data-note = "F4"></div>
+                        <div class = "key_b" data-note = "F#4"></div>
+                        <div class = "key_w" data-note = "G4"></div>
+                        <div class = "key_b" data-note = "G#4"></div>
+                        <div class = "key_w" data-note = "A4"></div>
+                        <div class = "key_b" data-note = "A#4"></div>
+                        <div class = "key_w" data-note = "B4"></div>
+                      </div>
+
+            <div class="Chords Options">
+                <div class="tonic">
+                  <button class="button green">I </button>
+               </div> 
+               <div class="dominant/subdominant">
+                 <button class="button orange">V</button>
+                 <button class="button orange">IV</button>
+               </div> 
+               <div class="supertonic/submediant/mediant">
+                <button class="button red">ii</button>
+                <button class="button red">vi</button>
+                <button class="button red">iii</button>
+               </div> 
+             </div>
+
+        
+           </body>
+
+</body>
+</html>
