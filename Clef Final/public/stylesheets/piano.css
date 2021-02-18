@@ -1,7 +1,7 @@
 body {
     /*https://cssgradient.io/ used for gradient */
-    background: rgb(175,245,242);
-    background: linear-gradient(90deg, rgba(175,245,242,1) 0%, rgba(201,255,249,0.30885857761073177) 35%, rgba(216,242,247,1) 100%);
+    background-color: #e6f9ff;
+    /* background: linear-gradient(90deg, rgba(175,245,242,1) 0%, rgba(201,255,249,0.30885857761073177) 35%, rgba(216,242,247,1) 100%); */
   }
   
   * {
@@ -9,45 +9,132 @@ body {
       padding: 0;
       box-sizing: border-box;
   }
-  
-  .button_instrument{
-      margin: 0 5px;
-      padding: 5px;
-      border-radius: 10px;
-      background-color: black;
-      color: white;
-      font-family: 'Fredoka One', cursive;
+
+  .instruments, .tonality, .settings, .results, .accidental{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+   
+  }
+
+  .tonality{
+      margin-top: 100px;
+  }
+
+  .settings{
+      margin-top: 180px;
+  }
+
+  .accidental{
+      margin-top: 260px;
+  }
+
+  .results{
+      margin-top: 340px;
+  }
+
+  #first{
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+  }
+
+  #last{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
   }
   
+  .button_instrument{
+      float:left;
+      background-color: #ADECF4;
+      width: 33%;
+      height: 50px;
+      margin: 0 auto;
+      color: black;
+      font-family: 'Fredoka One', cursive;
+      transition: 0.3s;
+      box-shadow: 0px 10px 10px lightgray;
+  }
+
+  .button_instrument p{
+      position: relative;
+      top: 12px;
+  }
   
   
   .button_note{
-      margin: 0 5px;
-      padding: 5px;
-      border-radius: 10px;
-      background-color: black;
-      color: white;
-      font-family: 'Fredoka One', cursive;
+    float:left;
+    background-color: #ADECF4;
+    width: 14.28571428571%;
+    height: 50px;
+    margin: 0 auto;
+    color: black;
+    font-family: 'Fredoka One', cursive;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px lightgray;
   }
-  
+
+  .button_note p{
+    position: relative;
+    top: 12px;
+  }
+
+  .button_accidental{
+    float:left;
+    background-color: #ADECF4;
+    width: 50%;
+    height: 50px;
+    margin: 0 auto;
+    color: black;
+    font-family: 'Fredoka One', cursive;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px lightgray;
+  }
+
+  .button_accidental p{
+    position: relative;
+    top: 12px;
+  }
+
   .button_scale{
-      margin: 0 5px;
-      padding: 5px;
-      border-radius: 10px;
-      background-color: black;
-      color: white;
-      font-family: 'Fredoka One', cursive;
+    float:left;
+    background-color: #ADECF4;
+    width: 50%;
+    height: 50px;
+    margin: 0 auto;
+    color: black;
+    font-family: 'Fredoka One', cursive;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px lightgray;
+  }
+
+  .button_scale p{
+    position: relative;
+    top: 12px;
+  }
+
+  .button_results{
+    float:left;
+    background-color: #ADECF4;
+    width: 50%;
+    height: 50px;
+    margin: 0 auto;
+    color: black;
+    font-family: 'Fredoka One', cursive;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px lightgray;
+  }
+
+  .button_results p{
+    position: relative;
+    top: 12px;
+  }
+
+
+  .chord_options{
+      width: 50%;
+      margin: 0 auto;
   }
   
-  .results button{
-      margin: 0 5px;
-      padding: 5px;
-      border-radius: 10px;
-      background-color: black;
-      color: white;
-      font-family: 'Fredoka One', cursive;
-     
-  }
   
   .button_green{
       margin: 0 5px;
@@ -90,7 +177,7 @@ body {
   }
   
   .accidental{
-    visibility: hidden;
+    visibility: visible;
   }
   
   .piano {
@@ -99,29 +186,18 @@ body {
       width: 100%;
       display: flex;
       justify-content: center;
-      visibility: hidden;
+      opacity: 0;
+      transition: 0.5s;
   }
   
-  @media only screen and (max-width: 1024px){
-     .piano{
-          height: 50vh;
-  
-     } 
-  
-     h4{
-         width: 90%;
-         margin: 0 auto;
-     }
-     
-     
-  }
+ 
   
   .white {
       width: 9%;
       min-width: 60px;
       height: 70%;
       background-color: white;
-      border: 1px solid #ccc;   
+      border: 3px solid #e6f9ff;   
   }
   
   
@@ -129,6 +205,8 @@ body {
   #last_key{
       border-bottom-right-radius: 15px;
       border-top-right-radius: 15px;
+    
+
   }
   
   #first_key{
@@ -145,6 +223,7 @@ body {
       background-color: black;
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
+    
   }
   
   .white.active {
@@ -154,6 +233,20 @@ body {
   .black.active {
       background-color: #333;
   }
+
+  @media only screen and (max-width: 1024px){
+    .piano{
+         height: 50vh;
+ 
+    } 
+ 
+    h4{
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    
+ }
   
   @media only screen and (min-width: 1024px){
   
@@ -168,23 +261,12 @@ body {
       cursor: pointer;
   }
   
-  .button_instrument:hover{
+  .button_instrument:hover, .button_note:hover, .button_accidental:hover, .button_scale:hover, .button_accidental:hover{
       color: black;
       background-color: white;
       cursor: pointer;
   }
   
-  .button_note:hover{
-      color: black;
-      background-color: white;
-      cursor: pointer;
-  }
-  
-  .button_scale:hover{
-      color: black;
-      background-color: white;
-      cursor: pointer;
-  }
   
   .button_green:hover{
       background-color: #D02FC6;

@@ -7,10 +7,10 @@ var piano_vis = false;
 
 function display_piano(){
   if(!piano_vis){
-    document.getElementById("piano").style.visibility = "visible";
+    document.getElementById("piano").style.opacity = "1";
     piano_vis = true;
   } else {
-    document.getElementById("piano").style.visibility = "hidden";
+    document.getElementById("piano").style.opacity = "0";
     piano_vis = false;
   }
 }

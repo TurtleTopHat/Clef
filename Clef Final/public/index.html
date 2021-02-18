@@ -25,13 +25,13 @@ div   {text-align: center;}
 
   <!-- use CSS to put in top right corner in line with "CLEF" -->
   <div id="NUIG Logo">
-    <img src="https://via.placeholder.com/150"> <class="NUIG logo"/>
+    <img src="https://via.placeholder.com/150"> <class="NUIG logo/>
     <div>NUI Galway</div>
   </div>
 
   <!-- use CSS to put in top left corner in line with "CLEF" -->
   <div id="CLEF Logo">
-    <img src="https://via.placeholder.com/150"> <class="CLEF logo"/>
+    <img src="https://via.placeholder.com/150"> <class="CLEF logo/>
     <div>CLEF Logo</div>
   </div>
 
@@ -42,42 +42,49 @@ div   {text-align: center;}
 
   <div class="shadow_box">
   <h4> Select your instrument and key settings.</h4>
-  <br>
+  
 
-  <div class="instruments">
-    <button onclick="display_piano()" class="button_instrument">Piano</button>
-    <button class="button_instrument">Guitar</button>
-    <button class="button_instrument">Sustained</button>
-  </div> <br>
+  
+    <div class="instruments">
+    <div onclick="display_piano()" class="button_instrument" id="first"><p>Piano</p></div>
+    <div class="button_instrument"><p>Guitar</p></div>
+    <div class="button_instrument" id="last"><p>Sustained</p></div>
+    </div>
+   
 
+  
   <div class="tonality">
-    <button onclick="note_select(this.id)" id = "A" class="button_note">A</button>
-    <button onclick="note_select(this.id)" id = "B" class="button_note">B</button>
-    <button onclick="note_select(this.id)" id = "C" class="button_note">C</button>
-    <button onclick="note_select(this.id)" id = "D" class="button_note">D</button>
-    <button onclick="note_select(this.id)" id = "E" class="button_note">E</button>
-    <button onclick="note_select(this.id)" id = "F" class="button_note">F</button>
-    <button onclick="note_select(this.id)" id = "G" class="button_note">G</button>
-  </div> <br>
+    <div onclick="note_select(this.id)" id = "first" class="button_note"><p>A</p></div>
+    <div onclick="note_select(this.id)" id = "B" class="button_note"><p>B</p></div>
+    <div onclick="note_select(this.id)" id = "C" class="button_note"><p>C</p></div>
+    <div onclick="note_select(this.id)" id = "D" class="button_note"><p>D</p></div>
+    <div onclick="note_select(this.id)" id = "E" class="button_note"><p>E</p></div>
+    <div onclick="note_select(this.id)" id = "F" class="button_note"><p>F</p></div>
+    <div onclick="note_select(this.id)" id = "last" class="button_note"><p>G</p></div>
+  </div> 
 
-  <div class="key settings">
-    <button onclick="sharp_or_flat(this.id)" id = "b" class="accidental">b</button>
-    <button onclick="sharp_or_flat(this.id)" id = "#" class="accidental">#</button>
-    &emsp;
-    <button onclick="maj_or_min(this.id)" id = "maj" class="button_scale">Maj</button>
-    <button onclick="maj_or_min(this.id)" id = "min" class="button_scale">min</button>
-  </div><br>
-
-  <div class="results">
-    <button onclick="run()"><b>See Results</b> </button>
-    <button onclick="sound()"><b>Sound</b></button>
+ 
+    <div class="settings">
+    <div onclick="maj_or_min(this.id)" id = "first" class="button_scale"><p>Maj</p></div>
+    <div onclick="maj_or_min(this.id)" id = "last" class="button_scale"><p>Min</p></div>
   </div>
 
-  <br>
+  <div class="accidental">
+    <div onclick="sharp_or_flat(this.id)" class="button_accidental" id="first"><p>b</p></div>
+    <div onclick="sharp_or_flat(this.id)" class="button_accidental" id="last"><p>#</p></div>
+</div>
+
+
+
+  <div class="results">
+    <div class="button_results" id="first" onclick="run()"><p>See Results</p></div>
+    <div class="button_results" id="last" onclick="sound()"><p>Sound</p></p></div>
+  </div>
+
 
 </div>
   
-  <br>
+  
 
   <div class="Chords Options">
     <div class="tonic">
