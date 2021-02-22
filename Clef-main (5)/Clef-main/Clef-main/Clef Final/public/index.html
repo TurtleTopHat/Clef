@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Anton&display=swap" rel="stylesheet">  <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Fredoka+One&display=swap" rel="stylesheet">  <!-- font -->
+  <title> CLEF Music App NUIG</title>
+
+</header>
+
+<style>
+h1 {text-align: center; font-family: 'Anton', sans-serif; font-size: 40px;}
+h4 {text-align: center; font-family: 'Abel', sans-serif; font-size: 20px;}
+button   {text-align: center; font-size: 16px;}
+div   {text-align: center;}
+
+</style>
+
+<link rel="stylesheet" href="stylesheets/piano.css">
+<script src="javascript/script.js"></script>
+
+<body>
+
+  <!-- use CSS to put in top right corner in line with "CLEF" -->
+  <div id="NUIG Logo">
+    <img src="https://via.placeholder.com/150"> <class="NUIG logo"/>
+    <div>NUI Galway</div>
+  </div>
+
+  <!-- use CSS to put in top left corner in line with "CLEF" -->
+  <div id="CLEF Logo">
+    <img src="https://via.placeholder.com/150"> <class="CLEF logo"/>
+    <div>CLEF Logo</div>
+  </div>
+
+
+  <h1> CLEF</h1>
+  <h4> The chord generator/transposer for all your composing needs. </h4>
+
+
+  <div class="shadow_box">
+  <h4> Select your instrument and key settings.</h4>
+  <br>
+
+  <div class="instruments">
+    <button onclick="display_piano()" class="button_instrument">Piano</button>
+    <button class="button_instrument">Guitar</button>
+    <button class="button_instrument">Sustained</button>
+  </div> <br>
+
+  <div class="tonality">
+    <button onclick="note_select(this.id)" id = "A" class="button_note">A</button>
+    <button onclick="note_select(this.id)" id = "B" class="button_note">B</button>
+    <button onclick="note_select(this.id)" id = "C" class="button_note">C</button>
+    <button onclick="note_select(this.id)" id = "D" class="button_note">D</button>
+    <button onclick="note_select(this.id)" id = "E" class="button_note">E</button>
+    <button onclick="note_select(this.id)" id = "F" class="button_note">F</button>
+    <button onclick="note_select(this.id)" id = "G" class="button_note">G</button>
+  </div> <br>
+
+  <div class="key settings">
+    <button onclick="sharp_or_flat(this.id)" id = "b" class="accidental">b</button>
+    <button onclick="sharp_or_flat(this.id)" id = "#" class="accidental">#</button>
+    &emsp;
+    <button onclick="maj_or_min(this.id)" id = "maj" class="button_scale">Maj</button>
+    <button onclick="maj_or_min(this.id)" id = "min" class="button_scale">min</button>
+  </div><br>
+
+  <div class="results">
+    <button onclick="run()"><b>See Results</b> </button>
+    <button onclick="sound()"><b>Sound</b></button>
+  </div>
+
+  <br>
+
+</div>
+
+  <br>
+
+  <div class="Chords Options">
+    <div class="tonic">
+      <button onclick = "play_chord(this.id)" id = "I" class="button green">I </button>
+    </div>
+    <div class="dominant/subdominant">
+      <button onclick = "play_chord(this.id)" id = "V" class="button orange">V</button>
+      <button onclick = "play_chord(this.id)" id = "IV" class="button orange">IV</button>
+    </div>
+    <div class="supertonic/submediant/mediant">
+      <button onclick = "play_chord(this.id)" id = "II" class="button red">ii</button>
+      <button onclick = "play_chord(this.id)" id = "VI" class="button red">vi</button>
+      <button onclick = "play_chord(this.id)" id = "III" class="button red">iii</button>
+    </div>
+  </div>
+
+  <div id = "piano" class="piano">
+    <div id = "Ckey" class = "key white" data-note="C"></div>
+    <div id = "Cskey" class = "key black" data-note="Cs"></div>
+    <div id = "Dkey" class = "key white" data-note="D"></div>
+    <div id = "Dskey" class = "key black" data-note="Ds"></div>
+    <div id = "Ekey" class = "key white" data-note="E"></div>
+    <div id = "Fkey" class = "key white" data-note="F"></div>
+    <div id = "Fskey" class = "key black" data-note="Fs"></div>
+    <div id = "Gkey" class = "key white" data-note="G"></div>
+    <div id = "Gskey" class = "key black" data-note="Gs"></div>
+    <div id = "Akey" class = "key white" data-note="A"></div>
+    <div id = "Askey" class = "key black" data-note="As"></div>
+    <div id = "Bkey" class = "key white" data-note="B"></div>
+  </div>
+
+
+</body>
+
+</body>
+</html>
