@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/piano.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/cookies.js"></script>
+  <script>
+    window.onload=myAlert();
+  </script>
+  
+</head>
+
+
+<body>
+  <nav class="navbar bg-secondary">
+    <div class="collapse navbar-collapse container3" id="navcol-1" style="color:rgb(0, 0, 0);">
+        <ul class="nav navbar-nav ml-auto " role="navigation">
+            <li  class="logged-in">
+              <a href="#"  id="logout" type="button" class="modal-trigger" data-toggle="modal" >Logout</a>
+            </li>
+            <li  class="logged-out">
+              <a href="#" type="button" class="modal-trigger " data-toggle="modal" data-target="#modal-login">Login</a>
+            </li>
+            <li  class="logged-in">
+              <a href="#" type="button" class="modal-trigger" data-toggle="modal" data-target="#modal-account">Account</a>
+            </li>
+            <li  class="logged-out">
+              <a href="#" type="button" class="modal-trigger" data-toggle="modal" data-target="#modal-signup">Signup</a>
+            </li>
+        </ul>
+    </div>
+  </nav>
+  <button type="button" onclick="deleteCookie()">Erase Cookies</button>
+
+<!--Account Modal -->
+<div class="modal fade" id="modal-account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Account Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>Account details</h4><br />
+        <div class="account-details">ello</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="login-form">
+          <div class="input-field">
+            <input type="email" id="login-email" required />
+            <label for="login-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="login-password" required />
+            <label for="login-password">Your password</label>
+          </div>
+          <button class="btn yellow darken-2 z-depth-0">Login</button>
+          <p class="error pink-text center-align"></p>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Signup Modal -->
+<div class="modal fade" id="modal-signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign Up Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signup-form">
+          <div class="input-field">
+            <input type="email" id="signup-email" required />
+            <label for="signup-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="signup-password" required />
+            <label for="signup-password">Choose password</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="signup-bio" required />
+            <label for="signup-bio">One Line Bio</label>
+          </div>
+          <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+          <p class="error pink-text center-align"></p>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- use CSS to put in top right corner in line with "CLEF" -->
+<div id="NUIG Logo">
+  <div class="container2"><img src="https://via.placeholder.com/150" class="container2 NUIG logo"></div>
+  <div class="container2">NUI Galway</div>
+</div>
+
+<!-- use CSS to put in top left corner in line with "CLEF" -->
+<div id="CLEF Logo">
+  <div class="container2"> <img src="https://via.placeholder.com/150" class="container2 CLEF logo"/></div>
+ 
+  <div class="container2">CLEF Logo</div>
+</div>
+
+<div>
+<h1 class="container2"> CLEF</h1>
+<h4 class=container2> The chord generator/transposer for all your composing needs. </h4>
+</div>
+
+<div class="shadow_box">
+<h4 class="container2"> Select your instrument and key settings.</h4>
+<br>
+
+<div class="instruments container2">
+  <button onclick="display_piano()" class="button_instrument">Piano</button>
+  <button class="button_instrument">Guitar</button>
+  <button class="button_instrument">Sustained</button>
+</div> <br>
+
+<div class="tonality container2">
+  <button onclick="note_select(this.id)" id = "A" class="button_note">A</button>
+  <button onclick="note_select(this.id)" id = "B" class="button_note">B</button>
+  <button onclick="note_select(this.id)" id = "C" class="button_note">C</button>
+  <button onclick="note_select(this.id)" id = "D" class="button_note">D</button>
+  <button onclick="note_select(this.id)" id = "E" class="button_note">E</button>
+  <button onclick="note_select(this.id)" id = "F" class="button_note">F</button>
+  <button onclick="note_select(this.id)" id = "G" class="button_note">G</button>
+</div> <br>
+
+<div class="key settings container2">
+  <button onclick="sharp_or_flat(this.id)" id = "b" class="accidental">b</button>
+  <button onclick="sharp_or_flat(this.id)" id = "#" class="accidental">#</button>
+  &emsp;
+  <button onclick="maj_or_min(this.id)" id = "maj" class="button_scale">Maj</button>
+  <button onclick="maj_or_min(this.id)" id = "min" class="button_scale">min</button>
+</div><br>
+
+<div class="results container2">
+  <button onclick="run()"><b>See Results</b> </button>
+  <button onclick="sound()"><b>Sound</b></button>
+</div>
+
+<br>
+
+</div>
+
+<br>
+
+<div class="Chords Options">
+  <div class="tonic container2">
+    <button onclick = "play_chord(this.id)" id = "I" class="button green">I </button>
+  </div>
+  <div class="dominant/subdominant container2">
+    <button onclick = "play_chord(this.id)" id = "V" class="button orange">V</button>
+    <button onclick = "play_chord(this.id)" id = "IV" class="button orange">IV</button>
+  </div>
+  <div class="supertonic/submediant/mediant container2">
+    <button onclick = "play_chord(this.id)" id = "II" class="button red">ii</button>
+    <button onclick = "play_chord(this.id)" id = "VI" class="button red">vi</button>
+    <button onclick = "play_chord(this.id)" id = "III" class="button red">iii</button>
+  </div>
+</div>
+
+<div id = "piano" class="piano">
+  <div id = "Ckey" class = "key white" data-note="C"></div>
+  <div id = "Cskey" class = "key black" data-note="Cs"></div>
+  <div id = "Dkey" class = "key white" data-note="D"></div>
+  <div id = "Dskey" class = "key black" data-note="Ds"></div>
+  <div id = "Ekey" class = "key white" data-note="E"></div>
+  <div id = "Fkey" class = "key white" data-note="F"></div>
+  <div id = "Fskey" class = "key black" data-note="Fs"></div>
+  <div id = "Gkey" class = "key white" data-note="G"></div>
+  <div id = "Gskey" class = "key black" data-note="Gs"></div>
+  <div id = "Akey" class = "key white" data-note="A"></div>
+  <div id = "Askey" class = "key black" data-note="As"></div>
+  <div id = "Bkey" class = "key white" data-note="B"></div>
+</div>
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBANqFSg5RXQQxUKtKcl2vp-TlbkS1lbMk",
+          authDomain: "practice-clef.firebaseapp.com",
+          projectId: "practice-clef",
+          storageBucket: "practice-clef.appspot.com",
+          messagingSenderId: "36628157118",
+          appId: "1:36628157118:web:9a2ca4cb090f8a818504ef",
+          measurementId: "G-G51ZJCSL1Z"
+        };
+        firebase.initializeApp(config);
+    
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const functions = firebase.functions();
+
+        // update firestore settings
+        db.settings({ timestampsInSnapshots: true });
+        </script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="scripts/index.js"></script>
+  <script src="scripts/auth.js"></script>
+</body>
+</html>
