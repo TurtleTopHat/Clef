@@ -8,9 +8,11 @@ var piano_vis = false;
 function display_piano(){
   if(!piano_vis){
     document.getElementById("piano").style.opacity = "1";
+    document.getElementById("piano").style.pointerEvents = "auto";
     piano_vis = true;
   } else {
     document.getElementById("piano").style.opacity = "0";
+    document.getElementById("piano").style.pointerEvents = "none";
     piano_vis = false;
   }
 }

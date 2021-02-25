@@ -24,20 +24,20 @@ div   {text-align: center;}
 <body>
 
   <!-- use CSS to put in top right corner in line with "CLEF" -->
-  <div id="NUIG Logo">
+  <div id="NUIG">
     <img src="https://via.placeholder.com/150"> <class="NUIG logo/>
-    <div>NUI Galway</div>
+   
   </div>
 
   <!-- use CSS to put in top left corner in line with "CLEF" -->
-  <div id="CLEF Logo">
+  <div id="CLEF">
     <img src="https://via.placeholder.com/150"> <class="CLEF logo/>
-    <div>CLEF Logo</div>
+    
   </div>
 
 
   <h1> CLEF</h1>
-  <h4> The chord generator/transposer for all your composing needs. </h4>
+  <h4> The chord generator/transposer<br> for all your composing needs. </h4>
   
 
   <div class="shadow_box">
@@ -88,16 +88,24 @@ div   {text-align: center;}
 
   <div class="Chords Options">
     <div class="tonic">
-      <button id = "I" class="button_green">I </button>
-    </div>
-    <div class="dominant/subdominant">
-      <button id = "V" class="button_orange">V</button>
-      <button id = "IV" class="button_orange">IV</button>
-    </div>
-    <div class="supertonic/submediant/mediant">
-      <button id = "II" class="button_red">ii</button>
-      <button id = "VI" class="button_red">vi</button>
-      <button id = "III" class="button_red">iii</button>
+      <div class="top_row">
+        <div id = "I" class="top"><p>i</p></div>
+      </div>
+      
+      <div class="middle_row">
+        <div id = "first" class="middle"><p>ii</p></div>
+        <div id = "last" class="middle"><p>iii</p></div>  
+      </div>
+
+      <div class="bottom_row">
+        <div id = "first" class="bottom"><p>iv</p></div>
+        <div id = "V" class="bottom"><p>v</p></div>
+        <div id = "last" class="bottom"><p>vi</p></div>
+      </div>
+    
+      
+      
+      
     </div>
   </div>
 

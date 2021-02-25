@@ -10,6 +10,31 @@ body {
       box-sizing: border-box;
   }
 
+  ::-webkit-scrollbar{
+      visibility: hidden;
+  }
+
+  #NUIG img{
+    position: fixed;
+    left:5px;
+    top: 5px;
+    width: 50px;
+  }
+
+  h4{
+      font-size: 16px;
+      
+  }
+
+  #CLEF img{
+    position: fixed;
+    right:5px;
+    top: 5px;
+    width: 50px;
+   
+  }
+ 
+
   .instruments, .tonality, .settings, .results, .accidental{
     width: 50%;
     margin: 0 auto;
@@ -131,40 +156,66 @@ body {
 
 
   .chord_options{
-      width: 50%;
+      width: 100%;
       margin: 0 auto;
   }
   
+  .tonic{
+      width: 20%;
+      margin: 0 auto;
+  }
+
   
-  .button_green{
-      margin: 0 5px;
-      padding: 5px;
-      border-radius: 10px;
-      background-color: #2fd039;
-      font-family: 'Fredoka One', cursive;
-      cursor: pointer;
+  
+  .top{
+    background-color: #ADECF4;
+    width: 33%;
+    height: 50px;
+    margin: 0 auto;
+    color: black;
+    font-family: 'Fredoka One', cursive;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px lightgray;
+    border-radius: 5px;
   }
   
   
   
-  .button_orange{
-      margin: 0 5px;
-      padding: 5px;
-      border-radius: 10px;
-      background-color: #ed9912;
-      font-family: 'Fredoka One', cursive;
-      cursor: pointer;
+  .middle{
+    background-color: #ADECF4;
+    width: 50%;
+    height: 50px;
+    margin-bottom: 15px;
+    margin: 0 auto;
+    float: left;
+    color: black;
+    font-family: 'Fredoka One', cursive;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px lightgray;
+   
   }
-  
-  
-  
-  .button_red{
-      margin: 0 5px;
-      padding: 5px;
-      border-radius: 10px;
-      background-color: #f7080d;
-      font-family: 'Fredoka One', cursive;
-      cursor: pointer;
+
+  .bottom{
+    background-color: #ADECF4;
+    width: 33%;
+    height: 50px;
+    margin: 0 auto;
+    color: black;
+    float: left;
+    font-family: 'Fredoka One', cursive;
+    transition: 0.3s;
+    box-shadow: 0px 10px 10px lightgray;
+   
+  }
+
+  .top_row, .middle_row, .bottom_row{
+      margin-bottom: 15px;
+      height: 50px;
+  }
+
+  .top p, .middle p, .bottom p{
+      position: relative;
+      top: 12px;
   }
   
   
@@ -174,6 +225,7 @@ body {
       width: 60%;
       border-top: 4px solid black;
       border-bottom: 4px solid black;
+      height: 470px;
   }
   
   .accidental{
@@ -188,6 +240,7 @@ body {
       justify-content: center;
       opacity: 0;
       transition: 0.5s;
+      pointer-events: none;
   }
   
  
@@ -198,6 +251,9 @@ body {
       height: 70%;
       background-color: white;
       border: 3px solid #e6f9ff;   
+      transition: 0.3s;
+
+     
   }
   
   
@@ -223,6 +279,9 @@ body {
       background-color: black;
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
+      transition: 0.3s;
+
+      box-shadow: 0px 10px 15px gray;
     
   }
   
@@ -249,6 +308,28 @@ body {
  }
   
   @media only screen and (min-width: 1024px){
+
+    #NUIG img{
+        position: fixed;
+        left:5px;
+        top: 5px;
+        width: 150px;
+   
+      }
+    
+      #CLEF img{
+        position: fixed;
+        right:0px;
+        top: 5px;
+        width: 150px;
+      
+      }
+
+      h4{
+        font-size: 20px;
+        
+    }
+  
   
   
   .white:hover{
@@ -261,7 +342,7 @@ body {
       cursor: pointer;
   }
   
-  .button_instrument:hover, .button_note:hover, .button_accidental:hover, .button_scale:hover, .button_accidental:hover{
+  .button_instrument:hover, .button_note:hover, .button_accidental:hover, .button_scale:hover, .button_accidental:hover, .button_results:hover, .top:hover, .middle:hover, .bottom:hover{
       color: black;
       background-color: white;
       cursor: pointer;
