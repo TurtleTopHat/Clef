@@ -18,19 +18,17 @@ body {
     position: fixed;
     left:5px;
     top: 5px;
-    width: 50px;
+    width: 100px;
   }
 
-  h4{
-      font-size: 16px;
-      
-  }
+  
+ 
 
   #CLEF img{
     position: fixed;
     right:5px;
     top: 5px;
-    width: 50px;
+    width: 100px;
    
   }
  
@@ -233,8 +231,9 @@ body {
   }
   
   .piano {
+      margin: 0 auto;
       margin-top: 20px;
-      height: 100vh;
+      height: 80vh;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -246,14 +245,24 @@ body {
  
   
   .white {
-      width: 9%;
-      min-width: 60px;
-      height: 70%;
+    width: 9%;
+      height: 50%;
       background-color: white;
       border: 3px solid #e6f9ff;   
-      transition: 0.3s;
+      transition: 0.3s; 
+  }
 
-     
+  .black {
+    width: 4%;
+    height: 30%;
+    margin-left: -4%;
+    margin-right: -4%;
+      z-index: 2;
+      background-color: black;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      transition: 0.3s;
+      box-shadow: 0px 10px 15px gray;
   }
   
   
@@ -270,20 +279,7 @@ body {
       border-top-left-radius: 15px;
   }
   
-  .black {
-      width: 8%;
-      height: 45%;
-      margin-left: -4%;
-      margin-right: -4%;
-      z-index: 2;
-      background-color: black;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-      transition: 0.3s;
-
-      box-shadow: 0px 10px 15px gray;
-    
-  }
+ 
   
   .white.active {
       background-color: #ccc;
@@ -308,6 +304,39 @@ body {
  }
   
   @media only screen and (min-width: 1024px){
+
+    div{
+      font-size: 16px;
+  }
+
+  .piano{
+    width: 100%;
+  }
+
+  .white {
+    width: 9%;
+    min-width: 60px;
+    height: 70%;
+    background-color: white;
+    border: 3px solid #e6f9ff;   
+    transition: 0.3s;
+
+   
+}
+
+.black {
+  width: 8%;
+  height: 45%;
+  margin-left: -4%;
+  margin-right: -4%;
+  z-index: 2;
+  background-color: black;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: 0.3s;
+  box-shadow: 0px 10px 15px gray;
+
+}
 
     #NUIG img{
         position: fixed;
