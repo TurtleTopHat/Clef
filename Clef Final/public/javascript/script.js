@@ -5,16 +5,28 @@ function sound(){
 
 var piano_vis = false;
 
-function display_piano(){
-  if(!piano_vis){
-    document.getElementById("piano").style.opacity = "1";
-    document.getElementById("piano").style.pointerEvents = "auto";
-    piano_vis = true;
-  } else {
+function display_piano(check){
+  if(check){
+    if(!piano_vis){
+      document.getElementById("piano").style.opacity = "1";
+      document.getElementById("piano").style.pointerEvents = "auto";
+      piano_vis = true;
+      
+    } else {
+      document.getElementById("piano").style.opacity = "0";
+      document.getElementById("piano").style.pointerEvents = "none";
+      piano_vis = false;
+      
+    }
+  }
+  else{
     document.getElementById("piano").style.opacity = "0";
     document.getElementById("piano").style.pointerEvents = "none";
+    
     piano_vis = false;
   }
+
+  display_border(check);
 }
 
 window.onload=function(){
@@ -249,4 +261,50 @@ function construct_chords(val){
 
     document.getElementById("b").style.visibility = "hidden";
     document.getElementById("#").style.visibility = "hidden";
+}
+
+var counter = 0;
+function display_border(check){
+  var border = document.querySelector(".border-bottom");
+  if(check){
+    counter++;
+     if(counter % 2 == 1){
+      border.style.width = "50%";
+    }
+  
+    else{
+      border.style.width = "0%";
+    }
+  }
+  else{
+    border.style.width = "0%";
+    counter = 0;
+  }
+  
+  
+}
+
+function titleText(text, innerText){
+  
+  var title = document.querySelector(".title");
+  var innerText = document.querySelector(".instruments_button p");
+  var div_title = document.querySelector(".div_title");
+
+  if(title.innerHTML == text){
+    title.innerHTML = "Instruments";
+    title.style.top = "12px";
+    div_title.style.backgroundColor = "#ADECF4";
+    
+  }
+  else{
+    title.innerHTML = text;
+    innerText.style.top = 0;
+    div_title.style.backgroundColor = "white";
+  }
+
+  
+
+
+
+  
 }
