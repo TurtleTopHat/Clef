@@ -10,9 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="scripts/script.js"></script>
   <script src="scripts/cookies.js"></script>
-  <script>
-    window.onload=myAlert();
-  </script>
+  
   
 </head>
 
@@ -29,6 +27,9 @@
             </li>
             <li  class="logged-in">
               <a href="#" type="button" class="modal-trigger" data-toggle="modal" data-target="#modal-account">Account</a>
+            </li>
+            <li  class="logged-in">
+              <a href="#" type="button" class="modal-trigger" data-toggle="modal" data-target="#modal-info">Info</a>
             </li>
             <li  class="logged-out">
               <a href="#" type="button" class="modal-trigger" data-toggle="modal" data-target="#modal-signup">Signup</a>
@@ -124,6 +125,31 @@
     </div>
   </div>
 </div>
+
+<!--method of saving info form-->
+<div class="modal fade" id="modal-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Info Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="add-cafe-form">
+          <input type="text" name="name" placeholder="Cafe name">
+          <input type="text" name="city" placeholder="Cafe city">
+          <button>Add Cafe</button>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--method of saving info form above-->
 
 <!-- use CSS to put in top right corner in line with "CLEF" -->
 <div id="NUIG Logo">
