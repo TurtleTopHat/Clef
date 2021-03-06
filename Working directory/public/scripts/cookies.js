@@ -1,4 +1,4 @@
-function myAlert()
+window.addEventListener("load",function myAlert()
 {
   var cookies=document.cookie.split(';')
   .map(cookie => cookie.split('='))
@@ -14,7 +14,7 @@ function myAlert()
   {
     window.alert('You have visited here more than once')
   }
-}
+},false);
 
 function deleteCookie()
 {
