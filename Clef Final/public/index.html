@@ -11,7 +11,8 @@
 </header>
 
 <style>
-h1 {text-align: center; font-family: 'Anton', sans-serif; font-size: 40px;}
+body{overflow: hidden;}
+h1 {text-align: center; font-family: 'Anton', sans-serif; font-size: 40px; margin-top:30vh; transition: 0.6s;}
 h4 {text-align: center; font-family: 'Abel', sans-serif; font-size: 20px;}
 button   {text-align: center; font-size: 16px;}
 div   {text-align: center;}
@@ -21,7 +22,7 @@ div   {text-align: center;}
 <link rel="stylesheet" href="stylesheets/piano.css">
 <script src="javascript/script.js"></script>
 
-<body>
+<body id="body">
 
   <!-- use CSS to put in top right corner in line with "CLEF" -->
   <div id="NUIG">
@@ -36,12 +37,19 @@ div   {text-align: center;}
   </div>
 
 
-  <h1> CLEF</h1>
+  <h1 id="h1"> CLEF</h1>
   <h4> The chord generator/transposer<br> for all your composing needs. </h4>
   
 
   <div class="shadow_box">
   <h4> Select your instrument and key settings.</h4>
+
+  <div class="selection"> Pick your Instrument: </div>
+  <div class="selection_container">
+    <div onclick="selectInstrument('Piano');"><p>Piano</p></div>
+    <div onclick="selectInstrument('Guitar');" class="selection_middle">Guitar</div>
+  </div>
+  
 
   <div class="buttons">
     <div class="instruments_button">

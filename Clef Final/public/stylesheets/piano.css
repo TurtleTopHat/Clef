@@ -225,6 +225,37 @@ body {
       height: 70vh;
   }
 
+  .selection{
+    margin-top: 10px;
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+  }
+
+  .selection_container{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 10px;
+  
+  }
+
+  .selection_container div{
+    width: 50%;
+    float: left;
+    font-family: 'Fredoka One', cursive;
+    padding: 0 10px;
+    transition: 0.4s;
+    cursor: pointer; 
+    margin-bottom: 10px;
+  }
+
+  .selection_container div:hover{
+    color:rgb(190, 190, 190);
+  }
+
+  .selection_middle{
+    border-left: 2px solid black;
+  }
+
   .border-bottom{
     margin: 0 auto;
     height: 4px;
@@ -258,6 +289,8 @@ body {
       background-color: white;
       border: 3px solid #e6f9ff;   
       transition: 0.3s; 
+      z-index: 1;
+      
   }
 
   .black {
@@ -265,7 +298,7 @@ body {
     height: 30%;
     margin-left: -4%;
     margin-right: -4%;
-      z-index: 2;
+      z-index: 3;
       background-color: black;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
@@ -303,8 +336,12 @@ body {
     left: 0;
     width: 50%;
     height: 450px;
-    z-index: 3;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.7s;
   }
+  
  
   .instruments_button{
     height: 50px;
@@ -367,7 +404,6 @@ body {
     width: 120px;
     transition: 0.5s;
     overflow: hidden;
-    background-color: red;
   }
 
   .notes_button p{
@@ -400,6 +436,8 @@ body {
     div{
       font-size: 16px;
   }
+
+  
 
   .piano{
     width: 100%;

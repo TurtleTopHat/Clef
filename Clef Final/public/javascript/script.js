@@ -284,6 +284,7 @@ function display_border(check){
   
 }
 
+
 function titleText(text, innerText){
   
   var title = document.querySelector(".title");
@@ -302,9 +303,26 @@ function titleText(text, innerText){
     div_title.style.backgroundColor = "white";
   }
 
+}
+
+function selectInstrument(textInput){
+  var buttons = document.querySelector(".buttons");
+  var selection = document.querySelector(".selection");
+  var Instrumentselection = document.querySelector(".selection_container");
+  var text = document.querySelector(".title");
+
+  var body = document.getElementById("body");
+  var h1 = document.getElementById("h1");
+
+  display_piano(true);
+
+  buttons.style.pointerEvents = "all";
+  buttons.style.opacity = 1;
+  h1.style.marginTop = 0;
+  body.style.overFlow = "auto";
+  text.innerHTML = textInput;
   
 
-
-
-  
+  selection.remove();
+  Instrumentselection.remove();
 }
