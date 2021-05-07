@@ -1,4 +1,4 @@
-function myAlert()
+window.addEventListener("load",function myAlert()
 {
   var cookies=document.cookie.split(';')
   .map(cookie => cookie.split('='))
@@ -7,14 +7,15 @@ function myAlert()
   {});
   if(cookies.visit==null)
   {
-    window.alert('This is your first visit')
+    //window.alert('This is your first visit')
+    welcomeMessage.innerHTML="<h4>Welcome first time user. We recommend that if you are unfamiliar with similar apps to view our tutorial. Please leave us any feedback in the discussion forum.</h4>";
     document.cookie="visit=1"
   }
   else
   {
-    window.alert('You have visited here more than once')
+    //window.alert('You have visited here more than once')
   }
-}
+},false);
 
 function deleteCookie()
 {
