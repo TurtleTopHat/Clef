@@ -1,0 +1,11 @@
+img.resize {
+    max-width:60%;
+    max-height:60%;
+  }
+
+  html{
+
+    margin: auto;
+    width: 960px;
+    overflow: scroll;
+}

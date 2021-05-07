@@ -1,29 +1,25 @@
 body {
   /*https://cssgradient.io/ used for gradient */
-  background: rgb(175,245,242);
-  background: linear-gradient(90deg, rgba(175,245,242,1) 0%, rgba(201,255,249,0.30885857761073177) 35%, rgba(216,242,247,1) 100%);
+  background-color: #e6f9ff;
+  /* background: linear-gradient(90deg, rgba(175,245,242,1) 0%, rgba(201,255,249,0.30885857761073177) 35%, rgba(216,242,247,1) 100%); */
 }
-
-.container2 {
-    display: flex;
-    justify-content: center;
-  }
-
-.container3 {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+h1{
+    margin-top: 30vh;
+}
+
+.h1{
+  margin-top: 0;
+}
+
+::-webkit-scrollbar{
+    visibility: hidden;
 }
 
 [data-note]{
@@ -33,87 +29,152 @@ body {
 .begeed
 {
     display: flex;
-  justify-content: center;
-}
-.button_instrument{
-    margin: 0 5px;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    font-family: 'Fredoka One', cursive;
+    justify-content: center;
 }
 
+#NUIG img{
+    position: fixed;
+    right:5px;
+    top: 115px;
+    width: 100px;
+  }
 
-
-.button_note{
-    margin: 0 5px;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    font-family: 'Fredoka One', cursive;
+#CLEF img{
+    position: fixed;
+    right:5px;
+    top: 5px;
+    width: 100px;
+   
 }
 
-.button_scale{
-    margin: 0 5px;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    font-family: 'Fredoka One', cursive;
+#first{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#last{
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.range_notes{
+  opacity: 0;
 }
 
 .shadow_box{
     margin: 10px auto;
-    width: 60%;
+    width: 50%;
     border-top: 4px solid black;
-    border-bottom: 4px solid black;
+    height: 70vh;
 }
 
-.accidental{
-  visibility: hidden;
-}
+.selection_container{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 10px;
+  
+  }
 
-.piano {
+  .selection_mobile{
+    height: 0;
+    pointer-events: none;
+    opacity: 0;
+
+  }
+
+  .selection_container div{
+    width: 100%;
+    float: left;
+    font-family: 'Fredoka One', cursive;
+    padding: 0 10px;
+    transition: 0.4s;
+    cursor: pointer; 
+    margin-bottom: 10px;
+  }
+
+  .selection_container div:hover{
+    color:rgb(190, 190, 190);
+  }
+
+  .selection_middle{
+    border-left: 2px solid black;
+  }
+
+  .border-bottom{
+    margin: 0 auto;
+    height: 4px;
+    width: 0%;
+    transition: 0.6s;
+    background-color:black;
+  }
+
+  .piano{
+    margin: 0 auto;
     margin-top: 20px;
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     justify-content: center;
-    visibility: hidden;
-}
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+  }
 
-.white {
+  
+  .C, .D, .E, .F, .G, .A, .B{
     width: 9%;
     min-width: 60px;
     height: 70%;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 3px solid #e6f9ff;   
+    transition: 0.3s;
+    z-index: 1;
 }
 
 
-
-#last_key{
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-#first_key{
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
-}
-
-.black {
+  .Cs, .Ds, .Fs, .Gs, .As {
     width: 8%;
     height: 45%;
     margin-left: -4%;
     margin-right: -4%;
     z-index: 2;
-    background-color: black;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+      background-color: black;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      transition: 0.3s;
+      box-shadow: 0px 10px 15px gray;
+  }
+  
+  .C:hover, .D:hover, .E:hover, .F:hover, .G:hover, .A:hover, .B:hover
+{
+  background-color: #efefef;
+  cursor: pointer;
 }
+
+.Cs:hover, .Ds:hover, .Fs:hover, .Gs:hover, .As:hover{
+  background-color: #2d2d2d;
+  cursor: pointer;
+}
+  
+
+.C.active, .D.active, .E.active, .F.active, .G.active, .A.active, .B.active{
+  background-color: #ccc;
+} 
+.Cs.active, .Ds.active, .Fs.active, .Gs.active, .As.active
+{
+  background-color: gray;
+}
+  
+#last_key{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#first_key{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
 
 .white.active {
     background-color: #ccc;
@@ -123,35 +184,500 @@ body {
     background-color: #333;
 }
 
-@media only screen and (min-width: 1024px){
-
-
 .white:hover{
-    background-color: #efefef;
-    cursor: pointer;
+  background-color: #efefef;
+  cursor: pointer;
 }
 
 .black:hover{
-    background-color: #2d2d2d;
-    cursor: pointer;
+  background-color: #2d2d2d;
+  cursor: pointer;
 }
 
-.button_instrument:hover{
-    color: black;
-    background-color: white;
+.buttons{
+    position: absolute;
+    left: 0;
+    top: calc(50% - 100px);
+    width: 50%;
+    height: 450px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.7s;
+  }
+
+  .buttons p{
+    position: relative;
+    top: 12px;
+    font-family: 'Fredoka One', cursive;
+  }
+  
+ 
+  .instruments_button{
+    height: 50px;
+    width: 100%;
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+
+  .instruments_button div{
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #ADECF4;
+    box-shadow: 0px 10px 10px lightgray;
+    transition: 0.4s; 
+    float: left;
+  }
+
+  .instruments_button div:hover, .notes_button div:hover, .major_button div:hover, .accidental_button div:hover{
+    background-color: #d2f1f5;
+  }
+
+  .overflow_div{
+    width: 120px;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  
+
+  .overflow_div:hover{
+    width: 360px;
     cursor: pointer;
+    
+  }
+
+  .instruments_button:hover, .notes_button:hover{
+    z-index: 5;
+  }
+
+  .notes_button{
+    height: 50px;
+    width: 100%;
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+
+  .notes_button div{
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #ADECF4;
+    box-shadow: 0px 10px 10px lightgray;
+    transition: 0.4s; 
+    float: left;
+  }
+
+  .notes_popout{
+    width: 120px;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+  .notes{
+    width: 51.42857142857143px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #ADECF4;
+    box-shadow: 0px 10px 10px lightgray;
+    transition: 0.4s; 
+    float: left;
+  }
+
+  .notes_popout:hover{
+    width: 480px;
+    cursor: pointer;
+  }
+
+  .accidental_button{
+    height: 50px;
+    width: 100%;
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+
+  .accidental_button div{
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #ADECF4;
+    box-shadow: 0px 10px 10px lightgray;
+    transition: 0.4s; 
+    float: left;
+  }
+
+  .overflow_div_accidental{
+    width: 120px;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  
+
+  .overflow_div_accidental:hover{
+    width: 360px;
+    cursor: pointer;
+    
+  }
+
+  .overflow_div_accidental div:hover, .overflow_div_reset div:hover{
+    background-color: #d2f1f5;
+  }
+
+
+  .major_button{
+    height: 50px;
+    width: 100%;
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+
+  .major_button div{
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #ADECF4;
+    box-shadow: 0px 10px 10px lightgray;
+    transition: 0.4s; 
+    float: left;
+  }
+
+  .overflow_div_major{
+    width: 120px;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  
+
+  .overflow_div_major:hover{
+    width: 360px;
+    cursor: pointer;
+    
+  }
+
+  .reset_button{
+    height: 50px;
+    width: 100%;
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+
+  .reset_button div{
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #ADECF4;
+    box-shadow: 0px 10px 10px lightgray;
+    transition: 0.4s; 
+    float: left;
+  }
+
+
+
+  .overflow_div_reset{
+    width: 120px;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  
+  .overflow_div_reset:hover{
+    cursor: pointer;
+    background-color: "#5e9ea1";
+  }
+
+.results_container{
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  opacity: 0;
+  transition: 0.4s; 
+  pointer-events: none;
+  margin-top: 50px;
+  
 }
 
-.button_note:hover{
-    color: black;
-    background-color: white;
-    cursor: pointer;
+.results_container div{
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #ADECF4;
+    box-shadow: 0px 10px 10px lightgray;
+    margin-top: 20px;
+    
 }
 
-.button_scale:hover{
-    color: black;
-    background-color: white;
-    cursor: pointer;
+.results_container div p{
+  position: relative;
+  top: 12px;
+  font-family: 'Fredoka One', cursive;
 }
+
+.results_container div:hover{
+  background-color: #d2f1f5;
+  cursor: pointer;
+  
+}
+
+.chord_options{
+  opacity: 0;
+  transition: 0.5s;
+  position: absolute;
+  top: calc(50% - 100px);
+  right: 200px;
+  pointer-events: "none";
+}
+
+.chord_options div {
+  width: 100px;
+  height: 50px;
+  background-color: #ADECF4;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0px 10px 10px lightgray;
+  transition: 0.4s;
+}
+
+.chord_options div:hover{
+  background-color: #d2f1f5;
+  cursor: pointer;
+}
+
+.chord_options div p{
+  position: relative;
+  top: 12px;
+  font-family: 'Fredoka One', cursive;
+}
+
+.buttons_mobile{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1280px){
+  .selection{
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+  .buttons_mobile{
+    transition: 0.7s;
+    opacity: 0;
+  }
+
+
+  .selection_container{
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+  .selection_mobile{
+    height: auto;
+    pointer-events: auto;
+    opacity: 1;
+    font-family: 'Fredoka One', cursive;
+  }
+
+  .selection_mobile:hover{
+    color: gray;
+    cursor: pointer;
+  }
+
+  .buttons_mobile{
+    width: 100%;
+    height: auto;
+    pointer-events: auto;
+    overflow: auto;
+    visibility: visible;
+  }
+
+  .piano{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    
+  }
+
+ .buttons{
+   visibility: hidden;
+   width: 0;
+   height: 0;
+   overflow: hidden;
+   pointer-events: none;
+ }
+
+ .results_container{
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+ }
+
+ .chord_options{
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+ }
+
+ #NUIG img{
+  position: fixed;
+  right:60px;
+  top: 5px;
+  width: 50px;
+}
+
+#CLEF img{
+  position: fixed;
+  right:5px;
+  top: 5px;
+  width: 50px;
+ 
+}
+
+.border-bottom{
+  margin: 0 auto;
+  height: 4px;
+  width: 0%;
+  transition: 0.6s;
+  background-color:black;
+}
+
+.shadow_box{
+  margin: 10px auto;
+  width: 90%;
+  height: auto;
+  border-top: 4px solid black;
+}
+
+.notes_row{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+ 
+}
+.notes_row div{
+  width: 14.2857%;
+  height: 30px;
+  border-radius: 5px;
+  float: left;
+  background-color: #ADECF4;
+  box-shadow: 0px 10px 10px lightgray;
+  transition: 0.4s;
+}
+
+.accidental_row{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+}
+.accidental_row div{
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  float: left;
+  background-color: #ADECF4;
+  box-shadow: 0px 10px 10px lightgray;
+  transition: 0.4s;
+}
+
+.major_row{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+}
+.major_row div{
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  float: left;
+  background-color: #ADECF4;
+  box-shadow: 0px 10px 10px lightgray;
+  transition: 0.4s;
+}
+
+.results_row{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+
+.div_run{
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  float: left;
+  background-color:  lightgray;
+  box-shadow: none; 
+  filter: blur(1px);
+  pointer-events: none;
+  box-shadow: 0px 10px 10px lightgray;
+  transition: 0.4s;
+}
+
+
+
+.div_reset{
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  float: left;
+  background-color:  #ADECF4;
+  box-shadow: 0px 10px 10px lightgray;
+}
+
+
+.chords_row{
+  opacity: 0;
+  height: 30px;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.5s;
+}
+
+.chords_row div{
+  width: 16.667%;
+  height: 30px;
+  border-radius: 5px;
+  float: left;
+  background-color: #ADECF4;
+  box-shadow: 0px 10px 10px lightgray;
+  transition: 0.4s;
+}
+
+
+.notes_row div p, .accidental_row div p, .major_row div p, .results_row div p{
+  position: relative;
+  font-size: 12px;
+  top: 5px;
+  font-family: 'Fredoka One', cursive;
+}
+
+.chords_row div p
+{
+  position: relative;
+  font-size: 10px;
+  top: 5px;
+  font-family: 'Fredoka One', cursive;
+}
+
+
 
 }
