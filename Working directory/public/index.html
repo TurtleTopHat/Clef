@@ -1,42 +1,58 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Clef</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Anton&display=swap" rel="stylesheet">  <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Fredoka+One&display=swap" rel="stylesheet">  <!-- font -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="stylesheets/piano.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="scripts/script.js"></script>
   <script src="scripts/cookies.js"></script>
-  <script>
-    window.onload=myAlert();
-  </script>
-  
+
+<style>
+  body{overflow: hidden;}
+  h1 {text-align: center; font-family: 'Anton', sans-serif; font-size: 40px; transition: 0.6s;}
+  h4 {text-align: center; font-family: 'Abel', sans-serif; font-size: 20px;}
+  button   {text-align: center; font-size: 16px;}
+  div   {text-align: center;}
+</style>
+
 </head>
 
+<body id="body">
 
-<body>
   <nav class="navbar bg-secondary">
     <div class="collapse navbar-collapse container3" id="navcol-1" style="color:rgb(0, 0, 0);">
         <ul class="nav navbar-nav ml-auto " role="navigation">
             <li  class="logged-in">
-              <a href="#"  id="logout" type="button" class="modal-trigger" data-toggle="modal" >Logout</a>
+              <a  id="logout" type="button" class="modal-trigger" data-toggle="modal" >Logout</a>
             </li>
             <li  class="logged-out">
-              <a href="#" type="button" class="modal-trigger " data-toggle="modal" data-target="#modal-login">Login</a>
+              <a  type="button" class="modal-trigger " data-toggle="modal" data-target="#modal-login">Login</a>
             </li>
             <li  class="logged-in">
-              <a href="#" type="button" class="modal-trigger" data-toggle="modal" data-target="#modal-account">Account</a>
+              <a type="button" class="modal-trigger" data-toggle="modal" data-target="#modal-account">Account</a>
             </li>
             <li  class="logged-out">
-              <a href="#" type="button" class="modal-trigger" data-toggle="modal" data-target="#modal-signup">Signup</a>
+              <a type="button" class="modal-trigger" data-toggle="modal" data-target="#modal-signup">Signup</a>
+            </li>
+            <li>
+              <a type="button" class="modal-trigger" data-toggle="modal" href="/forum.html">Discussion forum</a>
+            </li>
+            <li>
+              <a type="button" class="modal-trigger" data-toggle="modal" href="/tutorial.html">Tutorial</a>
             </li>
         </ul>
     </div>
   </nav>
-  <button type="button" onclick="deleteCookie()">Erase Cookies</button>
+
+  <div id="welcomeMessage"></div>
 
 <!--Account Modal -->
 <div class="modal fade" id="modal-account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -49,8 +65,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <h4>Account details</h4><br />
-        <div class="account-details">ello</div>
+        <h4>Account details</h4><br/>
+        <div class="account-details">details</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -71,20 +87,23 @@
       </div>
       <div class="modal-body">
         <form id="login-form">
+          <tr>
           <div class="input-field">
             <input type="email" id="login-email" required />
             <label for="login-email">Email address</label>
           </div>
-          <div class="input-field">
+        </tr>
+        <div class="input-field">
             <input type="password" id="login-password" required />
             <label for="login-password">Your password</label>
           </div>
-          <button class="btn yellow darken-2 z-depth-0">Login</button>
+        </tr>
+          <button class="btn">Login</button>
           <p class="error pink-text center-align"></p>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -104,17 +123,17 @@
         <form id="signup-form">
           <div class="input-field">
             <input type="email" id="signup-email" required />
-            <label for="signup-email">Email address</label>
+            <label for="signup-email">Your Email</label>
           </div>
           <div class="input-field">
             <input type="password" id="signup-password" required />
-            <label for="signup-password">Choose password</label>
+            <label for="signup-password">Password</label>
           </div>
           <div class="input-field">
-            <input type="text" id="signup-bio" required />
-            <label for="signup-bio">One Line Bio</label>
+            <input type="text" id="signup-username" required />
+            <label for="signup-username">Username</label>
           </div>
-          <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+          <button class="btn ">Sign up</button>
           <p class="error pink-text center-align"></p>
         </form>
       </div>
@@ -125,92 +144,140 @@
   </div>
 </div>
 
-<!-- use CSS to put in top right corner in line with "CLEF" -->
-<div id="NUIG Logo">
-  <div class="container2"><img src="https://via.placeholder.com/150" class="container2 NUIG logo"></div>
-  <div class="container2">NUI Galway</div>
-</div>
 
-<!-- use CSS to put in top left corner in line with "CLEF" -->
-<div id="CLEF Logo">
-  <div class="container2"> <img src="https://via.placeholder.com/150" class="container2 CLEF logo"/></div>
- 
-  <div class="container2">CLEF Logo</div>
-</div>
+
+
 
 <div>
-<h1 class="container2"> CLEF</h1>
-<h4 class=container2> The chord generator/transposer for all your composing needs. </h4>
+<h1 id="h1">CLEF</h1>
+<h4> The chord generator<br> for all your composing needs </h4>
 </div>
 
 <div class="shadow_box">
-<h4 class="container2"> Select your instrument and key settings.</h4>
-<br>
+<h4> Select your key settings</h4>
+<h4 class="range_notes">placeholder</h4>
 
-<div class="instruments container2">
-  <button onclick="display_piano()" class="button_instrument">Piano</button>
-  <button class="button_instrument">Guitar</button>
-  <button class="button_instrument">Sustained</button>
-</div> <br>
-
-<div class="tonality container2">
-  <button onclick="note_select(this.id)" id = "A" class="button_note">A</button>
-  <button onclick="note_select(this.id)" id = "B" class="button_note">B</button>
-  <button onclick="note_select(this.id)" id = "C" class="button_note">C</button>
-  <button onclick="note_select(this.id)" id = "D" class="button_note">D</button>
-  <button onclick="note_select(this.id)" id = "E" class="button_note">E</button>
-  <button onclick="note_select(this.id)" id = "F" class="button_note">F</button>
-  <button onclick="note_select(this.id)" id = "G" class="button_note">G</button>
-</div> <br>
-
-<div class="key settings container2">
-  <button onclick="sharp_or_flat(this.id)" id = "b" class="accidental">b</button>
-  <button onclick="sharp_or_flat(this.id)" id = "#" class="accidental">#</button>
-  &emsp;
-  <button onclick="maj_or_min(this.id)" id = "maj" class="button_scale">Maj</button>
-  <button onclick="maj_or_min(this.id)" id = "min" class="button_scale">min</button>
-</div><br>
-
-<div class="results container2">
-  <button onclick="run()"><b>See Results</b> </button>
-  <button onclick="sound()"><b>Sound</b></button>
-</div>
-
-<br>
-
-</div>
-
-<br>
-
-<div class="Chords Options">
-  <div class="tonic container2">
-    <button onclick = "play_chord(this.id)" id = "I" class="button green">I </button>
+<div onclick="selectInstrument('Piano'); showButtons();" class="selection_mobile">Start</div>
+  <div class="selection_container">
+    <div onclick="selectInstrument('Piano');"><p>Start</p></div>
   </div>
-  <div class="dominant/subdominant container2">
-    <button onclick = "play_chord(this.id)" id = "V" class="button orange">V</button>
-    <button onclick = "play_chord(this.id)" id = "IV" class="button orange">IV</button>
-  </div>
-  <div class="supertonic/submediant/mediant container2">
-    <button onclick = "play_chord(this.id)" id = "II" class="button red">ii</button>
-    <button onclick = "play_chord(this.id)" id = "VI" class="button red">vi</button>
-    <button onclick = "play_chord(this.id)" id = "III" class="button red">iii</button>
-  </div>
-</div>
 
-<div id = "piano" class="piano">
-  <div id = "Ckey" class = "key white" data-note="C"></div>
-  <div id = "Cskey" class = "key black" data-note="Cs"></div>
-  <div id = "Dkey" class = "key white" data-note="D"></div>
-  <div id = "Dskey" class = "key black" data-note="Ds"></div>
-  <div id = "Ekey" class = "key white" data-note="E"></div>
-  <div id = "Fkey" class = "key white" data-note="F"></div>
-  <div id = "Fskey" class = "key black" data-note="Fs"></div>
-  <div id = "Gkey" class = "key white" data-note="G"></div>
-  <div id = "Gskey" class = "key black" data-note="Gs"></div>
-  <div id = "Akey" class = "key white" data-note="A"></div>
-  <div id = "Askey" class = "key black" data-note="As"></div>
-  <div id = "Bkey" class = "key white" data-note="B"></div>
+  <!----------------------------------------------------------------------------------->
+  <div class="buttons_mobile">
+    <div class="notes_row">
+      <div onclick="note_select(this.id); noteSelectMobile(this, this.innerHTML);" id="A"><p>A</p></div>
+      <div onclick="note_select(this.id); noteSelectMobile(this, this.innerHTML);" id="B"><p>B</p></div>
+      <div onclick="note_select(this.id); noteSelectMobile(this, this.innerHTML);" id="C"><p>C</p></div>
+      <div onclick="note_select(this.id); noteSelectMobile(this, this.innerHTML);" id="D"><p>D</p></div>
+      <div onclick="note_select(this.id); noteSelectMobile(this, this.innerHTML);" id="E"><p>E</p></div>
+      <div onclick="note_select(this.id); noteSelectMobile(this, this.innerHTML);" id="F"><p>F</p></div>
+      <div onclick="note_select(this.id); noteSelectMobile(this, this.innerHTML);" id="G"><p>G</p></div>
+    </div>
+
+    <div class="accidental_row">
+      <div onclick="sharp_or_flat(this.id); accidentalSelectMobile(this);" class="flatMobile" id="b"><p>Flat</p></div>
+      <div onclick="sharp_or_flat(this.id); accidentalSelectMobile(this);" class="sharpMobile" id="#"><p>Sharp</p></div>
+    </div>
+
+    <div class="major_row">
+      <div onclick="maj_or_min(this.id); majorSelectMobile(this, this.innerHTML);" id="maj"><p>Major</p></div>
+      <div onclick="maj_or_min(this.id); majorSelectMobile(this, this.innerHTML);" id="min"><p>Minor</p></div>
+    </div>
+
+    <div class="results_row">
+      <div class="div_run" onclick="run(); reveal_results();"><p>See Results</p></div>
+      <div class="div_reset" onclick="resetMobile();"><p>Reset</p></div>
+    </div>
+
+    <div class="chords_row">
+      <div onclick = "play_chord(this.id)" id = "Imobile" class="button green"><p>I</p></div>
+      <div onclick = "play_chord(this.id)" id = "Vmobile" class="button orange"><p>V</p></div>
+      <div onclick = "play_chord(this.id)" id = "IVmobile" class="button orange"><p>IV</p></div>
+      <div onclick = "play_chord(this.id)" id = "IImobile" class="button red"><p>II</p></div>
+      <div onclick = "play_chord(this.id)" id = "VImobile" class="button red"><p>VI</p></div>
+      <div onclick = "play_chord(this.id)" id = "IIImobile" class="button red"><p>III</p></div>
+    </div>
+  </div>
+  <!----------------------------------------------------------------------------------->
+
+  <div class="buttons">
+    
+
+    <div class="notes_button">
+      <div class="notes_popout">
+        <div class="div_title_notes"><p class="title_notes">Notes</p></div>
+        <div onclick="note_select(this.id); titleText_notes(this.innerHTML, this.innerHTML);" style="width:51px;"class="notes" id="A"><p>A</p></div>
+        <div onclick="note_select(this.id); titleText_notes(this.innerHTML, this.innerHTML);" style="width:51px;"class="notes" id="B"><p>B</p></div>
+        <div onclick="note_select(this.id); titleText_notes(this.innerHTML, this.innerHTML);" style="width:51px;"class="notes" id="C"><p>C</p></div>
+        <div onclick="note_select(this.id); titleText_notes(this.innerHTML, this.innerHTML);" style="width:51px;"class="notes" id="D"><p>D</p></div>
+        <div onclick="note_select(this.id); titleText_notes(this.innerHTML, this.innerHTML);" style="width:51px;"class="notes" id="E"><p>E</p></div>
+        <div onclick="note_select(this.id); titleText_notes(this.innerHTML, this.innerHTML);" style="width:51px;"class="notes" id="F"><p>F</p></div>
+        <div onclick="note_select(this.id); titleText_notes(this.innerHTML, this.innerHTML);" style="width:51px;"class="notes" id="G"><p>G</p></div>
+      </div>
+    </div>
+
+    <div class="accidental_button">
+      <div class="overflow_div_accidental">
+        <div class="div_title_accidental"><p class="title_accidental">Accidental</p></div>
+        <div onclick="sharp_or_flat(this.id); titleText_accidental(this.innerHTML, this.innerHTML);" class="flat" id="b"><p>Flat</p></div>
+        <div onclick="sharp_or_flat(this.id); titleText_accidental(this.innerHTML, this.innerHTML);" class="sharp" id="#"><p>Sharp</p></div>
+      </div>
+    </div>
+
+    <div class="major_button">
+      <div class="overflow_div_major">
+        <div class="div_title_major"><p class="title_major">Major / Minor</p></div>
+        <div onclick="maj_or_min(this.id); titleText_major(this.innerHTML, this.innerHTML);" class="notes" id="maj"><p>Major</p></div>
+        <div onclick="maj_or_min(this.id); titleText_major(this.innerHTML, this.innerHTML);" class="notes" id="min"><p>Minor</p></div>
+        
+      </div>
+    </div>
+
+    <div class="reset_button">
+      <div  onclick="reset();" class="overflow_div_reset">
+        <div class="div_title_reset"><p class="title_reset">Reset</p></div>
+      </div>
+    </div>
+
+    <div class="results_container">
+      <div class="div_run" onclick="run(); reveal_results();"><p>See Results</p></div>
+      
+    </div>
+
+  </div>
+
+  <div id = "piano" class="piano">
+    <div id = "first_key" class = "C" data-note="C"></div>
+    <div id = "key black" class = "Cs" data-note="Cs"></div>
+    <div id = "key white" class = "D" data-note="D"></div>
+    <div id = "key black" class = "Ds" data-note="Ds"></div>
+    <div id = "key white" class = "E" data-note="E"></div>
+    <div id = "key white" class = "F" data-note="F"></div>
+    <div id = "key black" class = "Fs" data-note="Fs"></div>
+    <div id = "key white" class = "G" data-note="G"></div>
+    <div id = "key black" class = "Gs" data-note="Gs"></div>
+    <div id = "key white" class = "A" data-note="A"></div>
+    <div id = "key black" class = "As" data-note="As"></div>
+    <div id = "last_key"  class = "B" data-note="B"></div>
+  </div>
+
+
 </div>
+<div class="border-bottom"></div>
+
+
+
+<div class="chord_options">
+    <div onclick = "play_chord(this.id)" id = "I" class="button green"><p>I</p></div>
+    <div onclick = "play_chord(this.id)" id = "V" class="button orange"><p>V</p></div>
+    <div onclick = "play_chord(this.id)" id = "IV" class="button orange"><p>IV</p></div>
+    <div onclick = "play_chord(this.id)" id = "II" class="button red"><p>II</p></div>
+    <div onclick = "play_chord(this.id)" id = "VI" class="button red"><p>VI</p></div>
+    <div onclick = "play_chord(this.id)" id = "III" class="button red"><p>III</p></div>
+</div>
+ 
+
+
         <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
@@ -227,7 +294,7 @@
           measurementId: "G-G51ZJCSL1Z"
         };
         firebase.initializeApp(config);
-    
+
         // make auth and firestore references
         const auth = firebase.auth();
         const db = firebase.firestore();
@@ -239,6 +306,9 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="scripts/index.js"></script>
-  <script src="scripts/auth.js"></script>
-</body>
+        <script src="scripts/auth.js"></script>
+        <script src="scripts/postcomments.js"></script>
+        <script src="scripts/getcomments.js"></script>
+        <script src="scripts/deletecomment.js"></script> 
+  </body>
 </html>
